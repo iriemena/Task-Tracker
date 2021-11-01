@@ -12,7 +12,7 @@ function CreateTask(props) {
 
   //   getting users from database
   useEffect(() => {
-    axios.get("http://localhost:4000/api/users").then((users) => {
+    axios.get("/api/users").then((users) => {
       setUsers(users.data.map((user) => user.username));
 
       //   selected user
@@ -30,7 +30,7 @@ function CreateTask(props) {
     };
 
     axios
-      .post("http://localhost:4000/api/tasks/add", task)
+      .post("/api/tasks/add", task)
       .then((user) => console.log(user))
       .catch((err) => console.log(err));
 

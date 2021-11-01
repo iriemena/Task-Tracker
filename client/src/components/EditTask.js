@@ -12,16 +12,14 @@ function EditTask(props) {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/api/tasks/" + props.match.params.id)
-      .then((response) => {
-        setUsername(response.data.username);
-        setDescription(response.data.description);
-        setDuration(response.data.duration);
-        setDate(new Date(response.data.date));
-      });
+    axios.get("/api/tasks/" + props.match.params.id).then((response) => {
+      setUsername(response.data.username);
+      setDescription(response.data.description);
+      setDuration(response.data.duration);
+      setDate(new Date(response.data.date));
+    });
 
-    axios.get("http://localhost:4000/api/tasks").then((res) => {
+    axios.get("/api/tasks").then((res) => {
       const item = res.data.map((user) => user.username);
       setUsers(item);
     });
@@ -38,10 +36,7 @@ function EditTask(props) {
     };
 
     axios
-      .put(
-        "http://localhost:4000/api/tasks/update/" + props.match.params.id,
-        task
-      )
+      .put("/api/tasks/update/" + props.match.params.id, task)
       .then((user) => console.log(user));
 
     props.history.push("/");

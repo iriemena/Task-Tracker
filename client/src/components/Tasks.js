@@ -6,14 +6,14 @@ function Tasks() {
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/tasks")
+      .get("/api/tasks")
       .then((items) => setTasks(items.data))
       .catch((err) => console.log(err));
   }, []);
 
   const deleteTask = (id) => {
     axios
-      .delete("http://localhost:4000/api/tasks/" + id)
+      .delete("/api/tasks/" + id)
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
     const del = tasks.filter((task) => task._id !== id);

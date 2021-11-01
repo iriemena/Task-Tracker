@@ -7,7 +7,7 @@ function CreateUser() {
     e.preventDefault();
     const userName = { username };
     axios
-      .post("http://localhost:4000/api/users/add", userName)
+      .post("/api/users/add", userName)
       .then((user) => console.log(user.data));
 
     setUsername("");
