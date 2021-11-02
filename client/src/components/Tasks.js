@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import TableContent from "./TableContent";
+import TasksContent from "./TasksContent";
 
 function Tasks() {
   const [tasks, setTasks] = useState([]);
@@ -41,7 +41,7 @@ function Tasks() {
           </thead>
           <tbody>
             {tasks.map((task) => {
-              return <TableContent task={task} deleteTask={deleteTask} />;
+              return <TasksContent task={task} deleteTask={deleteTask} />;
             })}
           </tbody>
         </table>

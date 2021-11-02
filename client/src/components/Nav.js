@@ -21,9 +21,9 @@ function Nav() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link className="nav-link active" aria-current="page" to="/">
+              {/* <Link className="nav-link active" aria-current="page" to="/">
                 Tasks
-              </Link>
+              </Link> */}
               <Link className="nav-link" to="/create">
                 Create Task
               </Link>
